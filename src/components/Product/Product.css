@@ -1,0 +1,23 @@
+.product {
+    background: white;
+    color: black;
+    padding:16px;
+    margin: 14px 28px;
+    border-radius: 3px;
+    flex: 0 0 10em;
+    button {
+        background: rgb(55,173,171);
+        color: white;
+        border-radius: 3px;
+        padding: 16px;
+
+        
+    }
+    p, h2 {
+        font-family: Times New Roman;
+        margin:0;
+    }
+    p+p {
+        margin: 16px 0 24px 0;
+    }
+}
