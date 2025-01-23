@@ -12,4 +12,8 @@
         height: 1.5em;
         display: inline-block;
     }
+
+    details {
+        /* TODO Add position to make cart show up in front of page. */
+    }
 }

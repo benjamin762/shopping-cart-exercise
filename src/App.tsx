@@ -1,6 +1,7 @@
 import './App.css'
 import Header from './components/Header/Header'
 import Product from './components/Product/Product'
+import {useState} from 'react'
 
 function App() {
   const books = [
@@ -25,10 +26,20 @@ function App() {
       text: 'Not really a book :/'
     }
   ]
-  const products = books.map((book, index) => <Product key={index} title={book.title} author={book.author} text={book.text} />)
+  let [cart, setCart] = useState(new Array<number>())
+
+  function addToCart (id: number) {
+    if (!cart.includes(id)) {
+      setCart([...cart, id])
+    }
+  }
+
+
+  const products = books.map((book, index) => <Product key={index} id={index} addToCart={addToCart} title={book.title} author={book.author} text={book.text} />)
+  
   return (
     <>
-      <Header />
+      <Header cart={books.filter((_, i) => cart.includes(i))}/>
       <main>
         {products}
       </main>
