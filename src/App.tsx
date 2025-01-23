@@ -25,7 +25,7 @@ function App() {
       text: 'Not really a book :/'
     }
   ]
-  const products = books.map(book => <Product title={book.title} author={book.author} text={book.text} />)
+  const products = books.map((book, index) => <Product key={index} title={book.title} author={book.author} text={book.text} />)
   return (
     <>
       <Header />
